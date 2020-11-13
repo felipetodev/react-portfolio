@@ -1,33 +1,36 @@
 import home1 from '../img/home1.png'
-import styled from 'styled-components'
 import { About, Description, Image, Hide } from '../styles'
+import { motion } from 'framer-motion'
+import { titleAnimation, fade, photoAnimation } from '../animation'
+import Wave from './Wave'
+import styled from 'styled-components'
 
 const AboutSection = () => {
     return (
         <About>
             <Description>
-                <div className="title">
+                <motion.div>
                     <Hide>
-                        <h2>Trabajamos para crear</h2>
+                        <motion.h2 variants={titleAnimation}>Trabajamos para crear</motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>tus <span>sueños</span></h2>
+                        <motion.h2 variants={titleAnimation}>tus <span>sueños</span></motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>realidad.</h2>
+                        <motion.h2 variants={titleAnimation}>realidad.</motion.h2>
                     </Hide>
-                </div>
-                <p>contactanos para cualqueir idea que tengans para tu negocio, contamos con gente profesional, con ideas unicas y basta experiencia.</p>
-                <button>Contactanos</button>
+                </motion.div>
+                <motion.p variants={fade}>contactanos para cualqueir idea que tengans para tu negocio, contamos con gente profesional, con ideas unicas y basta experiencia.</motion.p>
+                <motion.button variants={fade}>Contactanos</motion.button>
             </Description>
             <Image>
-                <img src={home1} alt="Imagen de Portada"/>
+                <motion.img variants={photoAnimation} src={home1} alt="Imagen de Portada"/>
             </Image>
+            <Wave />
         </About>
     )
 }
 
 //styled-components
-
 
 export default AboutSection
