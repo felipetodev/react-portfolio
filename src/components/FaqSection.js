@@ -1,50 +1,51 @@
 import styled from 'styled-components'
 import { About } from '../styles'
+import Toggle from './Toggle'
+import { AnimateSharedLayout } from 'framer-motion'
+import { useScroll } from './useScroll'
+import {  fade } from '../animation'
 
 const FaqSection = () => {
+
+    const [element, controls] = useScroll()
+
     return (
-        <Faq>
+        <Faq variants={fade} ref={element} animate={controls} initial="hidden">
             <h2>Tiene dudas? <span>FAQ</span></h2>
-            <div className="question">
-                <h4>Comencemos</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor nose que.</p>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Itinerario de Desarrollo</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor nose que.</p>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Diferentes Metodos de Pago</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor nose que.</p>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Que Ofrecemos?</h4>
-                <div className="answer">
-                    <p>Lorem ipsum dolor nose que.</p>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
+            <AnimateSharedLayout>
+                <Toggle title="Comencemos">
+                    <div className="answer">
+                        <p>Lorem ipsum dolor nose que.</p>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </Toggle>
+                <Toggle title="Itinerario de Desarrollo">
+                    <div className="answer">
+                        <p>Lorem ipsum dolor nose que.</p>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </Toggle>
+                <Toggle title="Diferentes Metodos de Pago">
+                    <div className="answer">
+                        <p>Lorem ipsum dolor nose que.</p>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </Toggle>
+                <Toggle title="Que Ofrecemos?">
+                    <div className="answer">
+                        <p>Lorem ipsum dolor nose que.</p>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                </Toggle>
+            </AnimateSharedLayout>
         </Faq>
     )
 }

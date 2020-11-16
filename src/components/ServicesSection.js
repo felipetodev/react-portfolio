@@ -5,10 +5,15 @@ import teamwork from '../img/teamwork.svg'
 import home2 from '../img/home2.png'
 import styled from 'styled-components'
 import { About, Description, Image } from '../styles'
+import {  fade } from '../animation'
+import { useScroll } from './useScroll'
 
 const ServicesSection = () => {
+
+    const [element, controls] = useScroll()
+
     return (
-        <Services>
+        <Services variants={fade} animate={controls} initial="hidden" ref={element}>
             <Description>
                 <h2>Resultados <span>100%</span> de Alta Calidad</h2>
                 <Cards>
@@ -63,6 +68,10 @@ const Services = styled(About)`
 const Cards = styled.div`
     display: flex;
     flex-wrap: wrap;
+
+    @media (max-width: 1000px) {
+        justify-content: center;
+    }
 `
 
 const Card = styled.div`

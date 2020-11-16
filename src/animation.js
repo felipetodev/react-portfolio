@@ -34,12 +34,12 @@ export const fade = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-        transition: { ease: "easeOut", duration: 1 },
+        transition: { ease: "easeOut", duration: 0.75 },
     },
 };
 
 export const photoAnimation = {
-    hidden: { scale: 1.5, opacity: 0 },
+    hidden: { scale: 1.2, opacity: 0 }, /* ajustar */
     show: {
         scale: 1,
         opacity: 1,
@@ -74,8 +74,10 @@ export const slider = {
 
 export const sliderContainer = {
     hidden: { opacity: 1 },
-    show: { opacity: 1, transition: {
+    show: { 
+        opacity: 1, 
+        transition: {
         staggerChildren: 0.12,
-        ease: "easeOut",
-    }},
+        ease: "easeOut" },
+    },
 };
