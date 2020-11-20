@@ -1,21 +1,40 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 
 const Nav = () => {
+    const {pathname} = useLocation ()
+
     return (
         <StyledNav>
             <h1>
-                <Link id="logo" to="/">Ossandón</Link>
+                <Link id="logo" to="/">Ossandón Studio</Link>
             </h1>
             <ul>
                 <li>
-                    <Link to="/">1. Sobre mi</Link>
+                    <Link to="/">1. Nosotros</Link>
+                    <Line 
+                        transition={{  duration: 0.75}} 
+                        initial={{ width: "0%" }} 
+                        animate={{ width: pathname === "/" ? "100%" : "0%" }} 
+                    />
                 </li>
                 <li>
                     <Link to="/work">2. Nuestro Trabajo</Link>
+                    <Line 
+                        transition={{  duration: 0.75}} 
+                        initial={{ width: "0%" }} 
+                        animate={{ width: pathname === "/work" ? "100%" : "0%" }} 
+                    />
                 </li>
                 <li>
-                    <Link to="/contact">3. Contactanos</Link>
+                    <Link to="/contact">3. Contacto</Link>
+                    <Line 
+                        transition={{  duration: 0.75}} 
+                        initial={{ width: "0%" }} 
+                        animate={{ width: pathname === "/contact" ? "100%" : "0%" }} 
+                    />
                 </li>
             </ul>
         </StyledNav>
@@ -51,7 +70,7 @@ const StyledNav = styled.nav`
     }
 
     li {
-        padding-left: 10rem;
+        margin-left: 9rem;
         position: relative;
     }
 
@@ -65,15 +84,24 @@ const StyledNav = styled.nav`
         }
 
         ul {
-            padding: 2rem;
+            padding: 2rem 1rem;
             justify-content: space-around;
             width: 100%;
 
             li {
-                padding: 0;
+                margin: 0;
             }
         }
     }
+`
+
+const Line = styled(motion.div)`
+    height: 0.3rem;
+    background: #23d997;
+    width: 0%;
+    position: absolute;
+    bottom: -50%;
+    left: 0%;
 `
 
 export default Nav

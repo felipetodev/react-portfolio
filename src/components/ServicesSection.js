@@ -27,7 +27,7 @@ const ServicesSection = () => {
                     <Card>
                         <div className="icon">
                             <img src={diaphragm} alt="diaphragm"/>
-                            <h3>Agile</h3>
+                            <h3>Tecnología</h3>
                         </div>
                         <p>Lorem ipsum dolor sir amet.</p>
                     </Card>

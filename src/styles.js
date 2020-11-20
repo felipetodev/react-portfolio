@@ -26,6 +26,11 @@ export const Description = styled.div`
         font-weight: lighter;
     }
 
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
     @media (max-width: 1000px) {
         padding: 0;
         margin: 3rem 0rem;

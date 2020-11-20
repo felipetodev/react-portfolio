@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import athlete from '../img/athlete-small.png'
-import theracer from '../img/theracer-small.png'
+import band from '../img/band.png'
 import goodtimes from '../img/goodtimes-small.png'
 import { motion } from 'framer-motion'
 import { pageAnimation, fade, photoAnimation, lineAnimation, slider, sliderContainer } from '../animation'
@@ -24,23 +24,23 @@ const OurWork = () => {
                 <Frame4 variants={slider}></Frame4>
             </motion.div>
             <Movie>
-                <motion.h2 variants={fade}>Atleta</motion.h2>
+                <motion.h2 variants={fade}>Deporte</motion.h2>
                 <motion.div variants={lineAnimation} className="line"></motion.div>
-                <Link to="/work/the-athlete">
+                <Link to="/work/sports">
                     <Hide>
                         <motion.img variants={photoAnimation} src={athlete} alt="atleta" />
                     </Hide>
                 </Link>
             </Movie>
             <Movie ref={element} variants={fade} animate={controls} initial="hidden">
-                <h2>Racer</h2>
+                <h2>Música</h2>
                 <motion.div variants={lineAnimation} className="line"></motion.div>
-                <Link to="/work/the-racer">
-                    <motion.img variants={photoAnimation} src={theracer} alt="racer" />
+                <Link to="/work/music">
+                    <motion.img variants={photoAnimation} src={band} alt="music" />
                 </Link>
             </Movie>
             <Movie ref={element2} variants={fade} animate={controls2} initial="hidden">
-                <h2>Good Vibes</h2>
+                <h2>Eventos y matrimonios</h2>
                 <motion.div variants={lineAnimation} className="line"></motion.div>
                 <Link to="/work/good-times">
                     <motion.img variants={photoAnimation} src={goodtimes} alt="goodtimes" />

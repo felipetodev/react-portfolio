@@ -29,7 +29,7 @@ const FaqSection = () => {
                         </p>
                     </div>
                 </Toggle>
-                <Toggle title="Diferentes Metodos de Pago">
+                <Toggle title="Métodos de Pago">
                     <div className="answer">
                         <p>Lorem ipsum dolor nose que.</p>
                         <p>
@@ -37,7 +37,7 @@ const FaqSection = () => {
                         </p>
                     </div>
                 </Toggle>
-                <Toggle title="Que Ofrecemos?">
+                <Toggle title="Nuestras Garantías">
                     <div className="answer">
                         <p>Lorem ipsum dolor nose que.</p>
                         <p>
